@@ -1,0 +1,21 @@
+{
+  "name": "stanford-mportal",
+  "version": "1.0.0",
+  "description": "Medicine Portal",
+  "author": "Stanford Mobisocial lab",
+  "contributors": [
+    {
+      "name": "Giovanni Campagna",
+      "email": "gcampagn@cs.stanford.edu"
+    }
+  ],
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "q": "~1.4.1",
+    "typescript": "~1.8.7",
+    "omclient": "https://github.com/Stanford-IoT-Lab/omclient/tarball/master",
+    "gm": "~1.21.1"
+  }
+}
