@@ -1,0 +1,21 @@
+(rule $Other (other) (tt:root.special.other))
+
+(rule $InsertType ($PHRASE) (SimpleLexiconFn (type tt:type.insertype)))
+(rule $InsertSomething (insert $InsertType) (lambda (var x) (tt:root.command.insert (var x))))
+(rule $InsertSomething (insert $InsertType record) (lambda (var x) (tt:root.command.insert (var x))))
+(rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:inserttype.generic)))
+
+(rule $Number ($PHRASE) (NumberFn))
+(rule $Date ($PHRASE) (DateFn))
+(rule $StringValue ($PHRASE) (IdentityFn) (anchored 1))
+(rule $Gender ($Other) (IdentityFn))
+(rule $Gender ($PHRASE) (SimpleLexiconFn (type tt:type.gender)))
+
+(rule $StraightValue ($Date) (IdentityFn))
+(rule $StraightValue ($Number) (IdentityFn))
+(rule $StraightValue ($Gender) (IdentityFn))
+(rule $StraightValue ($StringValue) (IdentityFn))
+
+(rule $ROOT ($InsertSomething) (IdentityFn))
+(rule $ROOT ($StraightValue) (lambda x (tt:root.token.value (var x))))
+(rule $ROOT ($Special) (IdentityFn))

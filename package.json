@@ -10,7 +10,7 @@
     }
   ],
   "scripts": {
-    "start": "node main.js"
+    "start": "node --harmony main.js"
   },
   "dependencies": {
     "q": "~1.4.1",

@@ -1,0 +1,3 @@
+[submodule "sempre"]
+	path = sempre
+	url = https://github.com/Stanford-IoT-Lab/sempre.git

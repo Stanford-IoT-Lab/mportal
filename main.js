@@ -5,6 +5,7 @@
 // Copyright 2016 Giovanni Campagna <gcampagn@cs.stanford.edu>
 //
 // See COPYING for details
+"use strict";
 
 const Q = require('q');
 
@@ -13,9 +14,11 @@ const OmletDispatcher = require('./omletdispatcher');
 
 function main() {
     platform.init().then(function() {
-
+        OmletDispatcher.start();
     }).finally(function() {
         console.log('Cleaning up...');
         platform.exit();
     });
 }
+
+main();
