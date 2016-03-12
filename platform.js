@@ -33,8 +33,7 @@ function safeMkdirSync(dir) {
 module.exports = {
     // Initialize the platform code
     init: function() {
-        _writabledir = process.cwd() + '/shared';
-        safeMkdirSync(_writabledir);
+        _writabledir = process.cwd();
         _cachedir = _writabledir + '/cache';
         safeMkdirSync(_cachedir);
 

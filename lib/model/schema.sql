@@ -1,4 +1,5 @@
 create database if not exists mportal ;
+grant all on mportal.* to 'mportal'@'localhost' identified by 'mportal';
 use mportal ;
 
 drop view if exists patient_info ;

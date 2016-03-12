@@ -1,9 +1,9 @@
-(rule $Other (other) (tt:root.special.other))
+(rule $Other (other) (ConstantFn tt:root.special.other tt:type.special))
 
-(rule $InsertType ($PHRASE) (SimpleLexiconFn (type tt:type.insertype)))
-(rule $InsertSomething (insert $InsertType) (lambda (var x) (tt:root.command.insert (var x))))
-(rule $InsertSomething (insert $InsertType record) (lambda (var x) (tt:root.command.insert (var x))))
-(rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:inserttype.generic)))
+(rule $InsertType ($PHRASE) (SimpleLexiconFn (type tt:type.inserttype)))
+(rule $InsertSomething (insert $InsertType) (lambda x (tt:root.command.insert (var x))))
+(rule $InsertSomething (insert $InsertType record) (lambda x (tt:root.command.insert (var x))))
+(rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:inserttype.generic) tt:type.root.command))
 
 (rule $Number ($PHRASE) (NumberFn))
 (rule $Date ($PHRASE) (DateFn))

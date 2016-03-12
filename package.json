@@ -16,6 +16,9 @@
     "q": "~1.4.1",
     "typescript": "~1.8.7",
     "omclient": "https://github.com/Stanford-IoT-Lab/omclient/tarball/master",
-    "gm": "~1.21.1"
+    "gm": "~1.21.1",
+    "adt": "~0.7.2",
+    "knex": "~0.10.0",
+    "mysql": "~2.10.2"
   }
 }

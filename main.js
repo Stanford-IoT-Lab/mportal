@@ -9,14 +9,28 @@
 
 const Q = require('q');
 
-const platform = require('./platform');
-const OmletDispatcher = require('./omletdispatcher');
+const OmletDispatcher = require('./lib/omletdispatcher');
 
 function main() {
-    platform.init().then(function() {
-        OmletDispatcher.start();
-    }).finally(function() {
+    global.platform = require('./platform');
+    var dispatcher;
+
+    function onsignal() {
         console.log('Cleaning up...');
+        dispatcher.stop().then(function() {
+            platform.exit();
+        });
+    }
+    process.on('SIGINT', onsignal);
+    process.on('SIGTERM', onsignal);
+
+    platform.init().then(function() {
+        console.log('Platform initialized');
+        dispatcher = new OmletDispatcher();
+        return dispatcher.start();
+    }).catch(function(e) {
+        console.error('Caught early exception: ' + e.message);
+        console.error(e.stack);
         platform.exit();
     });
 }
