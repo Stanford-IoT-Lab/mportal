@@ -16,6 +16,8 @@
 (rule $StraightValue ($Gender) (IdentityFn))
 (rule $StraightValue ($StringValue) (IdentityFn))
 
+(rule $Special ($PHRASE) (SimpleLexiconFn (type tt:type.special)))
+
 (rule $ROOT ($InsertSomething) (IdentityFn))
 (rule $ROOT ($StraightValue) (lambda x (tt:root.token.value (var x))))
 (rule $ROOT ($Special) (IdentityFn))

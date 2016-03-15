@@ -7,6 +7,8 @@
 // See COPYING for details
 "use strict";
 
+require('./lib/polyfill');
+
 const Q = require('q');
 
 const OmletDispatcher = require('./lib/omletdispatcher');

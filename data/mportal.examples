@@ -1,0 +1,2 @@
+(example (utterance "yes") (targetValue (string "tt:root.special.yes")))
+(example (utterance "no") (targetValue (string "tt:root.special.no")))

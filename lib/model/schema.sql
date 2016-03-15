@@ -100,5 +100,4 @@ mr.capture_time = (select max(mr2.capture_time) from medical_record mr2 where mr
 
 create view patient_info(id, omlet_account, full_name, nick_name, date_of_birth, gender, weight, height)
 as select p.id, p.omlet_account, p.full_name, p.nick_name, p.date_of_birth, gr.gender, wr.weight_kgs, hr.height_cms
-from patient p, last_gender_record gr, last_weight_record wr, last_height_record hr
-where p.id = gr.patient_id and p.id = wr.patient_id and p.id = hr.patient_id ;
+from patient p left outer join last_gender_record gr on p.id = gr.patient_id left outer join last_weight_record wr on p.id = wr.patient_id left outer join last_height_record hr on p.id = hr.patient_id ;
