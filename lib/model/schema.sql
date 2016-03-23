@@ -83,19 +83,19 @@ create table height_record (
     foreign key (id) references medical_record(id) on update restrict on delete cascade
 ) collate utf8_bin ;
 
-create view last_gender_record(id, patient_id, gender, chromosomes, other_gender)
-as select gr.id, mr.patient_id, gr.gender, gr.chromosomes, gr.other_gender
-from gender_record gr, medical_record mr where gr.id = mr.id and
+create view last_gender_record(id, patient_id, collect_time, gender, chromosomes, other_gender)
+as select gr.id, mr.patient_id, mr.collect_time, gr.gender, gr.chromosomes, gr.other_gender
+from gender_record gr, medical_record mr where gr.id = mr.id and mr.record_type = 'gender' and
 mr.capture_time = (select max(mr2.capture_time) from medical_record mr2 where mr2.record_type = 'gender' and mr2.patient_id = mr.patient_id);
 
-create view last_weight_record(id, patient_id, weight_kgs)
-as select wr.id, mr.patient_id, wr.weight_kgs
-from weight_record wr, medical_record mr where wr.id = mr.id and
+create view last_weight_record(id, patient_id, collect_time, weight_kgs)
+as select wr.id, mr.patient_id, mr.collect_time, wr.weight_kgs
+from weight_record wr, medical_record mr where wr.id = mr.id and mr.record_type = 'weight' and
 mr.capture_time = (select max(mr2.capture_time) from medical_record mr2 where mr2.record_type = 'weight' and mr2.patient_id = mr.patient_id);
 
-create view last_height_record(id, patient_id, height_cms)
-as select hr.id, mr.patient_id, hr.height_cms
-from height_record hr, medical_record mr where hr.id = mr.id and
+create view last_height_record(id, patient_id, collect_time, height_cms)
+as select hr.id, mr.patient_id, mr.collect_time, hr.height_cms
+from height_record hr, medical_record mr where hr.id = mr.id and mr.record_type = 'height' and
 mr.capture_time = (select max(mr2.capture_time) from medical_record mr2 where mr2.record_type = 'height' and mr2.patient_id = mr.patient_id);
 
 create view patient_info(id, omlet_account, full_name, nick_name, date_of_birth, gender, weight, height)

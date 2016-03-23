@@ -1,9 +1,23 @@
 (rule $Other (other) (ConstantFn tt:root.special.other tt:type.special))
 
-(rule $InsertType ($PHRASE) (SimpleLexiconFn (type tt:type.inserttype)))
-(rule $InsertSomething (insert $InsertType) (lambda x (tt:root.command.insert (var x))))
-(rule $InsertSomething (insert $InsertType record) (lambda x (tt:root.command.insert (var x))))
-(rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:inserttype.generic) tt:type.root.command))
+(rule $RecordType ($PHRASE) (SimpleLexiconFn (type tt:type.recordtype)))
+(rule $RecordType (my $RecordType) (SelectFn 0))
+
+(rule $InsertSomething (insert $RecordType) (lambda x (tt:root.command.insert (var x))))
+(rule $InsertSomething (insert $RecordType record) (lambda x (tt:root.command.insert (var x))))
+(rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:recordtype.generic) tt:type.root.command))
+
+(rule $InsertValueOp (is) (ConstantFn (lambda x (lambda y ((tt:root.command.insertimmediate (var x)) (var y)))) (-> tt:type.recordtype (-> fb:type.any tt:type.root.command))))
+(rule $InsertValueLeft ($RecordType $InsertValueOp) (JoinFn betaReduce backward))
+(rule $InsertValue ($InsertValueLeft $StraightValue) (JoinFn betaReduce forward))
+
+(rule $ValueQuestion (what) (ConstantFn tt:root.command.ask))
+(rule $TimeQuestion (when did i measure) (ConstantFn tt:root.command.askwhen))
+(rule $Question ($ValueQuestion) (IdentityFn))
+(rule $Question ($TimeQuestion) (IdentityFn))
+(rule $Question ($ValueQuestion is) (SelectFn 0))
+(rule $AskSomething ($Question $RecordType) (JoinFn forward))
+(rule $AskSomething ($Question $RecordType ?) (JoinFn forward))
 
 (rule $Unit ($LEMMA_TOKEN) (SimpleLexiconFn (type (-> fb:type.number tt:type.measure))))
 (rule $Number ($PHRASE) (NumberFn))
@@ -23,5 +37,7 @@
 (rule $Special ($PHRASE) (SimpleLexiconFn (type tt:type.special)))
 
 (rule $ROOT ($InsertSomething) (IdentityFn))
+(rule $ROOT ($InsertValue) (IdentityFn))
+(rule $ROOT ($AskSomething) (IdentityFn))
 (rule $ROOT ($StraightValue) (lambda x (tt:root.token.value (var x))))
 (rule $ROOT ($Special) (IdentityFn))

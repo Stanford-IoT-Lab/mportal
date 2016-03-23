@@ -17,10 +17,10 @@
 {"lexeme":"hello","formula":"tt:root.special.hello", "type": "tt:type.special"}
 {"lexeme":"male","formula":"tt:gender.male", "type": "tt:type.gender"}
 {"lexeme":"female","formula":"tt:gender.female", "type": "tt:type.gender"}
-{"lexeme":"weight","formula":"tt:inserttype.weight", "type": "tt:type.inserttype"}
-{"lexeme":"gender","formula":"tt:inserttype.gender", "type": "tt:type.inserttype"}
-{"lexeme":"height","formula":"tt:inserttype.height", "type": "tt:type.inserttype"}
-{"lexeme":"generic","formula":"tt:inserttype.generic", "type": "tt:type.inserttype"}
+{"lexeme":"weight","formula":"tt:recordtype.weight", "type": "tt:type.recordtype"}
+{"lexeme":"gender","formula":"tt:recordtype.gender", "type": "tt:type.recordtype"}
+{"lexeme":"height","formula":"tt:recordtype.height", "type": "tt:type.recordtype"}
+{"lexeme":"generic","formula":"tt:recordtype.generic", "type": "tt:type.recordtype"}
 {"lexeme":"kg", "formula":"tt:value.unit.kg", "type": "(-> fb:type.number tt:type.measure)"}
 {"lexeme":"kilogram", "formula":"tt:value.unit.kg", "type": "(-> fb:type.number tt:type.measure)"}
 {"lexeme":"m", "formula":"tt:value.unit.m", "type": "(-> fb:type.number tt:type.measure)"}

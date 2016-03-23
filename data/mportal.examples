@@ -1,2 +1,5 @@
 (example (utterance "yes") (targetValue (string "tt:root.special.yes")))
 (example (utterance "no") (targetValue (string "tt:root.special.no")))
+(example (utterance "183 cm") (targetValue (string "(tt:root.token.value (tt:value.unit.cm (number 183)))")))
+(example (utterance "when did I measure my weight") (targetValue (string "(tt:root.command.askwhen tt:recordtype.weight)")))
+(example (utterance "what is my height") (targetValue (string "(tt:root.command.ask tt:recordtype.height)")))
