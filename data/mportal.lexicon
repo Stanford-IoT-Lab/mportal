@@ -21,3 +21,9 @@
 {"lexeme":"gender","formula":"tt:inserttype.gender", "type": "tt:type.inserttype"}
 {"lexeme":"height","formula":"tt:inserttype.height", "type": "tt:type.inserttype"}
 {"lexeme":"generic","formula":"tt:inserttype.generic", "type": "tt:type.inserttype"}
+{"lexeme":"kg", "formula":"tt:value.unit.kg", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"kilogram", "formula":"tt:value.unit.kg", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"m", "formula":"tt:value.unit.m", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"meter", "formula":"tt:value.unit.m", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"cm", "formula":"tt:value.unit.cm", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"centimeter", "formula":"tt:value.unit.cm", "type": "(-> fb:type.number tt:type.measure)"}

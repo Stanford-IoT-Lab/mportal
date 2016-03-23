@@ -5,7 +5,10 @@
 (rule $InsertSomething (insert $InsertType record) (lambda x (tt:root.command.insert (var x))))
 (rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:inserttype.generic) tt:type.root.command))
 
+(rule $Unit ($LEMMA_TOKEN) (SimpleLexiconFn (type (-> fb:type.number tt:type.measure))))
 (rule $Number ($PHRASE) (NumberFn))
+(rule $Measure ($Number $Unit) (JoinFn backward))
+(rule $Date ($PHRASE) (TimeFn))
 (rule $Date ($PHRASE) (DateFn))
 (rule $StringValue ($PHRASE) (IdentityFn) (anchored 1))
 (rule $Gender ($Other) (IdentityFn))
@@ -13,6 +16,7 @@
 
 (rule $StraightValue ($Date) (IdentityFn))
 (rule $StraightValue ($Number) (IdentityFn))
+(rule $StraightValue ($Measure) (IdentityFn))
 (rule $StraightValue ($Gender) (IdentityFn))
 (rule $StraightValue ($StringValue) (IdentityFn))
 

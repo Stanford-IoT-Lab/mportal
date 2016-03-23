@@ -57,7 +57,7 @@ create table medical_record (
 
     foreign key (patient_id) references patient(id) on update restrict on delete cascade,
     index patient_time (patient_id, capture_time),
-    index patient_type_time (patient_id, record_type, capture_time),
+    index patient_type_time (patient_id, record_type, capture_time)
 ) collate utf8_bin ;
 
 create table gender_record (
