@@ -11,6 +11,9 @@
 (rule $InsertValueLeft ($RecordType $InsertValueOp) (JoinFn betaReduce backward))
 (rule $InsertValue ($InsertValueLeft $StraightValue) (JoinFn betaReduce forward))
 
+(rule $ShareWith (share with doctor) (ConstantFn tt:root.command.share))
+(rule $ShareWithSomeone (share with $StringValue) (lambda x (tt:root.command.share (var x))))
+
 (rule $ValueQuestion (what) (ConstantFn tt:root.command.ask))
 (rule $TimeQuestion (when did i measure) (ConstantFn tt:root.command.askwhen))
 (rule $Question ($ValueQuestion) (IdentityFn))
@@ -41,3 +44,5 @@
 (rule $ROOT ($AskSomething) (IdentityFn))
 (rule $ROOT ($StraightValue) (lambda x (tt:root.token.value (var x))))
 (rule $ROOT ($Special) (IdentityFn))
+(rule $ROOT ($ShareWith) (IdentityFn))
+(rule $ROOT ($ShareWithSomeone) (IdentityFn))

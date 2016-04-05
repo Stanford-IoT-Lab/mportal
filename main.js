@@ -28,7 +28,7 @@ function main() {
 
     platform.init().then(function() {
         console.log('Platform initialized');
-        dispatcher = new OmletDispatcher();
+        dispatcher = new OmletDispatcher(process.argv[2] === '--flush-only');
         return dispatcher.start();
     }).catch(function(e) {
         console.error('Caught early exception: ' + e.message);

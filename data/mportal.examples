@@ -4,3 +4,5 @@
 (example (utterance "when did I measure my weight") (targetValue (string "(tt:root.command.askwhen tt:recordtype.weight)")))
 (example (utterance "what is my height") (targetValue (string "(tt:root.command.ask tt:recordtype.height)")))
 (example (utterance "insert weight record") (targetValue (string "(tt:root.command.insert tt:record.type.weight)")))
+(example (utterance "share with doctor") (targetValue (string "tt:root.command.share")))
+(example (utterance "share with Testing Acct") (targetValue (string "(tt:root.command.share (string \"testing acct\"))")))

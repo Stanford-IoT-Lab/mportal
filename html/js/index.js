@@ -8,5 +8,9 @@
             var self = $(this);
             exitWithMsg('(tt:root.command.insert tt:recordtype.' + self.attr('data-recordtype') + ')');
         });
+        $('.share-with-btn').on('click', function() {
+            var self = $(this);
+            exitWithMsg('tt:root.command.share');
+        });
     });
 })();
