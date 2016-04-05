@@ -36,7 +36,8 @@ create table patient (
     omlet_account varchar(255) unique not null,
     full_name varchar(255) not null collate utf8_general_ci,
     nick_name varchar(255) not null collate utf8_general_ci,
-    date_of_birth date null
+    date_of_birth date null,
+    sync_enabled boolean default false
 ) collate = utf8_bin ;
 
 create table patient_acl (
