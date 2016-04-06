@@ -22,6 +22,8 @@
 (rule $Question ($ValueQuestion) (IdentityFn))
 (rule $Question ($TimeQuestion) (IdentityFn))
 (rule $Question ($ValueQuestion is) (SelectFn 0))
+(rule $Question ($ValueQuestion was) (SelectFn 0))
+(rule $Question ($ValueQuestion are) (SelectFn 0))
 (rule $AskSomething ($Question $RecordType) (JoinFn forward))
 (rule $AskSomething ($Question $RecordType ?) (JoinFn forward))
 
