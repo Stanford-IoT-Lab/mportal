@@ -2,12 +2,14 @@
 
 (rule $RecordType ($PHRASE) (SimpleLexiconFn (type tt:type.recordtype)))
 (rule $RecordType (my $RecordType) (SelectFn 0))
+(rule $RecordType (my last $RecordType) (SelectFn 0))
 
 (rule $InsertSomething (insert $RecordType) (lambda x (tt:root.command.insert (var x))))
 (rule $InsertSomething (insert $RecordType record) (lambda x (tt:root.command.insert (var x))))
 (rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:recordtype.generic) tt:type.root.command))
 
 (rule $InsertValueOp (is) (ConstantFn (lambda x (lambda y ((tt:root.command.insertimmediate (var x)) (var y)))) (-> tt:type.recordtype (-> fb:type.any tt:type.root.command))))
+(rule $InsertValueOp (are) (ConstantFn (lambda x (lambda y ((tt:root.command.insertimmediate (var x)) (var y)))) (-> tt:type.recordtype (-> fb:type.any tt:type.root.command))))
 (rule $InsertValueLeft ($RecordType $InsertValueOp) (JoinFn betaReduce backward))
 (rule $InsertValue ($InsertValueLeft $StraightValue) (JoinFn betaReduce forward))
 
@@ -16,6 +18,7 @@
 
 (rule $ValueQuestion (what) (ConstantFn tt:root.command.ask))
 (rule $TimeQuestion (when did i measure) (ConstantFn tt:root.command.askwhen))
+(rule $TimeQuestion (when did i last measure) (ConstantFn tt:root.command.askwhen))
 (rule $Question ($ValueQuestion) (IdentityFn))
 (rule $Question ($TimeQuestion) (IdentityFn))
 (rule $Question ($ValueQuestion is) (SelectFn 0))

@@ -20,7 +20,16 @@
 {"lexeme":"weight","formula":"tt:recordtype.weight", "type": "tt:type.recordtype"}
 {"lexeme":"gender","formula":"tt:recordtype.gender", "type": "tt:type.recordtype"}
 {"lexeme":"height","formula":"tt:recordtype.height", "type": "tt:type.recordtype"}
+{"lexeme":"diagnosis","formula":"tt:recordtype.diagnosis", "type": "tt:type.recordtype"}
+{"lexeme":"body temperature","formula":"tt:recordtype.body_temperature", "type": "tt:type.recordtype"}
+{"lexeme":"temperature","formula":"tt:recordtype.body_temperature", "type": "tt:type.recordtype"}
+{"lexeme":"heart rate","formula":"tt:recordtype.heart_rate", "type": "tt:type.recordtype"}
+{"lexeme":"heartbeat","formula":"tt:recordtype.heart_rate", "type": "tt:type.recordtype"}
+{"lexeme":"blood pressure","formula":"tt:recordtype.blood_pressure", "type": "tt:type.recordtype"}
+{"lexeme":"pressure","formula":"tt:recordtype.blood_pressure", "type": "tt:type.recordtype"}
+{"lexeme":"lab results","formula":"tt:recordtype.labresults", "type": "tt:type.recordtype"}
 {"lexeme":"generic","formula":"tt:recordtype.generic", "type": "tt:type.recordtype"}
+{"lexeme":"other","formula":"tt:recordtype.other", "type": "tt:type.recordtype"}
 {"lexeme":"kg", "formula":"tt:value.unit.kg", "type": "(-> fb:type.number tt:type.measure)"}
 {"lexeme":"kilogram", "formula":"tt:value.unit.kg", "type": "(-> fb:type.number tt:type.measure)"}
 {"lexeme":"m", "formula":"tt:value.unit.m", "type": "(-> fb:type.number tt:type.measure)"}
@@ -54,3 +63,13 @@
 {"lexeme":"pound", "formula":"tt:value.unit.lb", "type": "(-> fb:type.number tt:type.measure)"}
 {"lexeme":"oz", "formula":"tt:value.unit.oz", "type": "(-> fb:type.number tt:type.measure)"}
 {"lexeme":"ounce", "formula":"tt:value.unit.oz", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"℃", "formula":"tt:value.unit.C", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"°c", "formula":"tt:value.unit.C", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"c", "formula":"tt:value.unit.C", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"℉", "formula":"tt:value.unit.F", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"°f", "formula":"tt:value.unit.F", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"f", "formula":"tt:value.unit.F", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"mmhg", "formula":"tt:value.unit.mmHg", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"inhg", "formula":"tt:value.unit.inHg", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"bpm", "formula":"tt:value.unit.bpm", "type": "(-> fb:type.number tt:type.measure)"}
+{"lexeme":"beats per minute", "formula":"tt:value.unit.bpm", "type": "(-> fb:type.number tt:type.measure)"}
