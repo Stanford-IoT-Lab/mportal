@@ -28,7 +28,12 @@
 {"lexeme":"blood pressure","formula":"tt:recordtype.blood_pressure", "type": "tt:type.recordtype"}
 {"lexeme":"pressure","formula":"tt:recordtype.blood_pressure", "type": "tt:type.recordtype"}
 {"lexeme":"lab results","formula":"tt:recordtype.labresults", "type": "tt:type.recordtype"}
-{"lexeme":"generic","formula":"tt:recordtype.generic", "type": "tt:type.recordtype"}
+{"lexeme":"cat","formula":"tt:recordtype.catscan", "type": "tt:type.recordtype"}
+{"lexeme":"cat scan","formula":"tt:recordtype.catscan", "type": "tt:type.recordtype"}
+{"lexeme":"ct scan","formula":"tt:recordtype.catscan", "type": "tt:type.recordtype"}
+{"lexeme":"xray","formula":"tt:recordtype.xray", "type": "tt:type.recordtype"}
+{"lexeme":"x-ray","formula":"tt:recordtype.xray", "type": "tt:type.recordtype"}
+{"lexeme":"generic","formula":"tt:recordtype.other", "type": "tt:type.recordtype"}
 {"lexeme":"other","formula":"tt:recordtype.other", "type": "tt:type.recordtype"}
 {"lexeme":"kg", "formula":"tt:value.unit.kg", "type": "(-> fb:type.number tt:type.measure)"}
 {"lexeme":"kilogram", "formula":"tt:value.unit.kg", "type": "(-> fb:type.number tt:type.measure)"}
