@@ -6,7 +6,11 @@
 
 (rule $InsertSomething (insert $RecordType) (lambda x (tt:root.command.insert (var x))))
 (rule $InsertSomething (insert $RecordType record) (lambda x (tt:root.command.insert (var x))))
-(rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:recordtype.generic) tt:type.root.command))
+(rule $InsertSomething (insert new $RecordType record) (lambda x (tt:root.command.insert (var x))))
+(rule $InsertSomething (insert a new $RecordType record) (lambda x (tt:root.command.insert (var x))))
+(rule $InsertSomething (insert record) (ConstantFn (tt:root.command.insert tt:recordtype.other) tt:type.root.command))
+(rule $InsertSomething (insert new record) (ConstantFn (tt:root.command.insert tt:recordtype.other) tt:type.root.command))
+(rule $InsertSomething (insert a new record) (ConstantFn (tt:root.command.insert tt:recordtype.other) tt:type.root.command))
 
 (rule $InsertValueOp (is) (ConstantFn (lambda x (lambda y ((tt:root.command.insertimmediate (var x)) (var y)))) (-> tt:type.recordtype (-> fb:type.any tt:type.root.command))))
 (rule $InsertValueOp (are) (ConstantFn (lambda x (lambda y ((tt:root.command.insertimmediate (var x)) (var y)))) (-> tt:type.recordtype (-> fb:type.any tt:type.root.command))))

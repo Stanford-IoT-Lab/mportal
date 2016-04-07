@@ -66,6 +66,7 @@ create table medical_record (
     record_type enum('diagnosis', 'xray', 'catscan', 'dnasequence', 'gender', 'weight', 'height', 'other', 'body_temperature', 'heart_rate', 'blood_pressure', 'labresults')
     not null default 'other',
     picture_url varchar(2048) null default null,
+    description mediumtext null default null,
 
     foreign key (patient_id) references patient(id) on update restrict on delete cascade,
     index patient_time (patient_id, capture_time),
