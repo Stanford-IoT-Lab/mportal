@@ -15,6 +15,8 @@
 
 (rule $ShareWith (share with doctor) (ConstantFn tt:root.command.share))
 (rule $ShareWithSomeone (share with $StringValue) (lambda x (tt:root.command.share (var x))))
+(rule $ShareWithSomeone (share with dr $StringValue) (lambda x (tt:root.command.share (var x))))
+(rule $ShareWithSomeone (share with doctor $StringValue) (lambda x (tt:root.command.share (var x))))
 
 (rule $ValueQuestion (what) (ConstantFn tt:root.command.ask))
 (rule $TimeQuestion (when did i measure) (ConstantFn tt:root.command.askwhen))
