@@ -30,6 +30,15 @@
 
         $('.insert-record-btn').on('click', function() {
             var self = $(this);
+            var form = this.form;
+            var value = $('.value-input', form).val();
+            var date = new Date($('.date-input', form).val());
+            exitWithMsg('(((tt:root.command.insertimmediate tt:recordtype.' + self.attr('data-recordtype') + ')'
+                        + ' (tt:value.unit.' + self.attr('data-unit') + ' ' + '(number ' + value + ')))'
+                        + ' (date ' + date.getFullYear() + ' ' + (date.getMonth()+1) + ' ' + date.getDate() + '))');
+        });
+        $('.insert-other-btn').on('click', function() {
+            var self = $(this);
             exitWithMsg('(tt:root.command.insert tt:recordtype.' + self.attr('data-recordtype') + ')');
         });
         $('.share-with-btn').on('click', function() {
@@ -50,9 +59,11 @@
             var cancerSubstage = findChecked($('input[name="cancer-substage"]'));
             if (cancerStage === null || cancerSubstage === null)
                 return;
-            exitWithMsg('((tt:root.command.insertimmediate tt:recordtype.diagnosis) '
+            var date = new Date($('#diagnosis-date').val());
+            exitWithMsg('(((tt:root.command.insertimmediate tt:recordtype.diagnosis) '
                         + '(list (string "' + cancerType + '") (string "' + cancerStage
-                        + '") (string "' + cancerSubstage + '")))');
+                        + '") (string "' + cancerSubstage + '")))'
+                        + ' (date ' + date.getFullYear() + ' ' + (date.getMonth()+1) + ' ' + date.getDate() + '))');
         });
         $('#insert-labresults-btn').on('click', function() {
             var white_blood_cell_count = $('#white-blood-cell-count');
@@ -64,10 +75,12 @@
                 !hemoglobin[0].checkValidity() ||
                 !platelet_count[0].checkValidity())
                 return;
-            exitWithMsg('((tt:root.command.insertimmediate tt:recordtype.labresults) '
+            var date = new Date($('#labresults-date').val());
+            exitWithMsg('(((tt:root.command.insertimmediate tt:recordtype.labresults) '
                         + '(list (number ' + white_blood_cell_count.val() + ') (number '
                         + hematocrit.val() + ') (number ' + hemoglobin.val() + ') '
-                        + '(number ' + platelet_count.val() + ')))');
+                        + '(number ' + platelet_count.val() + ')))'
+                        + ' (date ' + date.getFullYear() + ' ' + (date.getMonth()+1) + ' ' + date.getDate() + '))');
         });
     });
 })();

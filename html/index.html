@@ -34,27 +34,132 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="weight">Insert weight</button>
+          <button type="button" class="btn btn-primary btn-block" data-toggle="collapse"
+            data-target="#weight-form" aria-expanded="false" aria-controls="weight-form">Insert weight</button>
+        </div>
+      </div>
+      <div class="row collapse fade" id="weight-form">
+        <div class="col-md-6 col-md-offset-3">
+          <form>
+            <div class="form-group">
+              <label class="control-label" for="weight">Weight</label>
+              <div class="input-group">
+                <input type="number" class="form-control value-input" required min="0" id="weight" />
+                <span class="input-group-addon">kg</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="weight-date">Date of measure</label>
+              <input type="date" class="form-control date-input" required id="weight-date" />
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="weight" data-unit="kg">Save</button>
+            </div>
+          </form>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="height">Insert height</button>
+          <button type="button" class="btn btn-primary btn-block" data-toggle="collapse"
+            data-target="#height-form" aria-expanded="false" aria-controls="height-form">Insert height</button>
+        </div>
+      </div>
+      <div class="row collapse fade" id="height-form">
+        <div class="col-md-6 col-md-offset-3">
+          <form>
+            <div class="form-group">
+              <label class="control-label" for="height">Height</label>
+              <div class="input-group">
+                <input type="number" class="form-control value-input" required min="0" id="height"/>
+                <span class="input-group-addon">cm</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="height-date">Date of measure</label>
+              <input type="date" class="form-control date-input" required id="height-date" />
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="height" data-unit="cm">Save</button>
+            </div>
+          </form>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="body_temperature">Insert body temperature</button>
+          <button type="button" class="btn btn-primary btn-block" data-toggle="collapse"
+            data-target="#body-temperature-form" aria-expanded="false" aria-controls="body-temperature-form">Insert body temperature</button>
+        </div>
+      </div>
+      <div class="row collapse fade" id="body-temperature-form">
+        <div class="col-md-6 col-md-offset-3">
+          <form>
+            <div class="form-group">
+              <label class="control-label" for="body-temperature">Body temperature</label>
+              <div class="input-group">
+                <input type="number" class="form-control value-input" required min="0" id="body-temperature"/>
+                <span class="input-group-addon">℃</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="body-temperature-date">Date of measure</label>
+              <input type="date" class="form-control date-input" required id="body-temperature-date" />
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="body_temperature" data-unit="C">Save</button>
+            </div>
+          </form>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="heart_rate">Insert heart rate</button>
+          <button type="button" class="btn btn-primary btn-block" data-toggle="collapse"
+            data-target="#heart-rate-form" aria-expanded="false" aria-controls="heart-rate-form">Insert heart rate</button>
+        </div>
+      </div>
+      <div class="row collapse fade" id="heart-rate-form">
+        <div class="col-md-6 col-md-offset-3">
+          <form>
+            <div class="form-group">
+              <label class="control-label" for="heart-rate">Body temperature</label>
+              <div class="input-group">
+                <input type="number" class="form-control value-input" required min="0" id="heart-rate"/>
+                <span class="input-group-addon">bpm</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="heart-rate-date">Date of measure</label>
+              <input type="date" class="form-control date-input" required id="heart-rate-date" />
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="heart_rate" data-unit="bpm">Save</button>
+            </div>
+          </form>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="blood_pressure">Insert blood pressure</button>
+          <button type="button" class="btn btn-primary btn-block" data-toggle="collapse"
+            data-target="#blood-pressure-form" aria-expanded="false" aria-controls="blood-pressure-form">Insert heart rate</button>
+        </div>
+      </div>
+      <div class="row collapse fade" id="blood-pressure-form">
+        <div class="col-md-6 col-md-offset-3">
+          <form>
+            <div class="form-group">
+              <label class="control-label" for="blood-pressure">Body temperature</label>
+              <div class="input-group">
+                <input type="number" class="form-control value-input" required min="0" id="blood-pressure"/>
+                <span class="input-group-addon">mmHg</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="blood-pressure-date">Date of measure</label>
+              <input type="date" class="form-control date-input" required id="blood-pressure-date" />
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="blood_pressure" data-unit="mmHg">Save</button>
+            </div>
+          </form>
         </div>
       </div>
       <div class="row">
@@ -87,6 +192,10 @@
               <label class="radio-inline"><input type="radio" required name="cancer-substage" value="b"/>b</label>
               <label class="radio-inline" id="cancer-substage-c"><input type="radio" required name="cancer-substage" value="c"/>c</label>
 	          </div>
+            <div class="form-group">
+              <label class="control-label" for="diagnosis-date">Date of diagnosis</label>
+              <input type="date" class="form-control date-input" required id="diagnosis-date" />
+            </div>
             <div class="form-group">
               <button type="button" class="btn btn-primary btn-block" id="insert-diagnosis-btn">Save</button>
             </div>
@@ -131,6 +240,10 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="control-label" for="labresults-date">Date</label>
+              <input type="date" class="form-control date-input" required id="labresults-date" />
+            </div>
+            <div class="form-group">
               <button type="button" class="btn btn-primary btn-block" id="insert-labresults-btn">Save</button>
             </div>
           </form>
@@ -138,17 +251,17 @@
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="catscan">Insert CT scan</button>
+          <button type="button" class="btn btn-primary btn-block insert-other-btn" data-recordtype="catscan">Insert CT scan</button>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="xray">Insert X-ray</button>
+          <button type="button" class="btn btn-primary btn-block insert-other-btn" data-recordtype="xray">Insert X-ray</button>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <button type="button" class="btn btn-primary btn-block insert-record-btn" data-recordtype="other">Insert other record</button>
+          <button type="button" class="btn btn-primary btn-block insert-other-btn" data-recordtype="other">Insert other record</button>
         </div>
       </div>
       <div class="row">
