@@ -15,6 +15,19 @@
     }
 
     $(function() {
+        var hash = document.location.hash;
+        if (hash === '#diagnosis') {
+            $('#diagnosis-form').collapse('show');
+            setTimeout(function() {
+                $('#diagnosis-form')[0].scrollIntoView();
+            }, 1000);
+        } else if (hash === '#labresults') {
+            $('#labresults-form').collapse('show');
+            setTimeout(function() {
+                $('#labresults-form')[0].scrollIntoView();
+            }, 1000);
+        }
+
         $('.insert-record-btn').on('click', function() {
             var self = $(this);
             exitWithMsg('(tt:root.command.insert tt:recordtype.' + self.attr('data-recordtype') + ')');
@@ -23,9 +36,8 @@
             var self = $(this);
             exitWithMsg('tt:root.command.share');
         });
-        $('#cancer-stage-iv').change(function() {
-            var self = $(this);
-            if (self.prop('checked'))
+        $('input[name="cancer-stage"]').change(function() {
+            if ($('#cancer-stage-iv').prop('checked'))
                 $('#cancer-substage-c').hide();
             else
                 $('#cancer-substage-c').show();
